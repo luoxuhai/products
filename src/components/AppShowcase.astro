@@ -9,7 +9,7 @@ const developerName = developer.name[locale];
 const localizedApps = apps.map((app) => ({ ...app, ...app.content[locale] }));
 const featuredApp = localizedApps.find((app) => app.featured) ?? localizedApps[0];
 const otherApps = localizedApps.filter((app) => app.id !== featuredApp.id);
-const categories = [...new Set(localizedApps.map((app) => app.category))];
+const maintenanceDays = (new Date().getFullYear() - 2020) * 365;
 const pageTitle = `${developerName} · ${t.pageTitle}`;
 const independentExperienceYears = new Date().getFullYear() - 2020;
 const getOfficialLocalePath = (targetLocale: Locale) => getRelativeLocaleUrl(targetLocale);
@@ -60,14 +60,16 @@ const buildHeroIntro = () => `${independentExperienceYears}${t.heroIntroExperien
         <aside class="hero-card" aria-label={t.appConstellationLabel}>
           <div class="app-constellation" aria-hidden="true">
             {localizedApps.map((app, index) => (
-              <div class={`constellation-icon constellation-icon--${index + 1}`} style={`--accent: ${app.accent}`}>
-                <img
-                  class="app-icon"
-                  src={app.iconUrl}
-                  alt=""
-                  loading={index === 0 ? 'eager' : 'lazy'}
-                  decoding="async"
-                />
+              <div class={`constellation-orbit constellation-orbit--${index + 1}`} style={`--accent: ${app.accent}`}>
+                <div class={`constellation-icon constellation-icon--${index + 1}`}>
+                  <img
+                    class="app-icon"
+                    src={app.iconUrl}
+                    alt=""
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    decoding="async"
+                  />
+                </div>
               </div>
             ))}
             <div class="constellation-glow constellation-glow--one"></div>
@@ -80,16 +82,20 @@ const buildHeroIntro = () => `${independentExperienceYears}${t.heroIntroExperien
 
       <section class="stats" aria-label={t.overviewLabel}>
         <div>
-          <strong>{apps.length}</strong>
-          <span>{t.appCount}</span>
+          <strong>{apps.length}{t.publishedProductsUnit}</strong>
+          <span>{t.publishedProductsLabel}</span>
         </div>
         <div>
-          <strong>{categories.length}</strong>
-          <span>{t.categoryCount}</span>
+          <strong>{t.originalValue}</strong>
+          <span>{t.originalLabel}</span>
         </div>
         <div>
-          <strong>{t.mobileFirstValue}</strong>
-          <span>{t.mobileFirstLabel}</span>
+          <strong>{t.nativeExperienceValue}</strong>
+          <span>{t.nativeExperienceLabel}</span>
+        </div>
+        <div>
+          <strong>{maintenanceDays}{t.daysUnit}</strong>
+          <span>{t.maintenanceLabel}</span>
         </div>
       </section>
 
