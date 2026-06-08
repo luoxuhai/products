@@ -35,7 +35,13 @@ const categories = [...new Set(apps.map((app) => app.category))];
           <div class="phone-frame">
             <div class="phone-frame__status"></div>
             <div class="phone-frame__app" style={`--accent: ${featuredApp.accent}`}>
-              <span class="app-icon app-icon--large">{featuredApp.icon}</span>
+              <img
+                class="app-icon app-icon--large"
+                src={featuredApp.iconUrl}
+                alt={`${featuredApp.name} App Icon`}
+                loading="eager"
+                decoding="async"
+              />
               <p>最新发布</p>
               <h2>{featuredApp.name}</h2>
               <span>{featuredApp.subtitle}</span>
@@ -70,7 +76,13 @@ const categories = [...new Set(apps.map((app) => app.category))];
           {[featuredApp, ...otherApps].map((app) => (
             <article class:list={["app-card", { "app-card--featured": app.featured }]} style={`--accent: ${app.accent}`}>
               <div class="app-card__top">
-                <span class="app-icon">{app.icon}</span>
+                <img
+                  class="app-icon"
+                  src={app.iconUrl}
+                  alt={`${app.name} App Icon`}
+                  loading="lazy"
+                  decoding="async"
+                />
                 <span class="category">{app.category}</span>
               </div>
               <h3>{app.name}</h3>
