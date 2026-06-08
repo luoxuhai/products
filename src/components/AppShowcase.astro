@@ -1,0 +1,154 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { apps, defaultLocale, developer, localeMeta, locales, ui, type Locale } from '../data/apps';
+import '../styles/global.css';
+
+const { locale = defaultLocale } = Astro.props as { locale?: Locale };
+const t = ui[locale];
+const developerName = developer.name[locale];
+const localizedApps = apps.map((app) => ({ ...app, ...app.content[locale] }));
+const featuredApp = localizedApps.find((app) => app.featured) ?? localizedApps[0];
+const otherApps = localizedApps.filter((app) => app.id !== featuredApp.id);
+const categories = [...new Set(localizedApps.map((app) => app.category))];
+const pageTitle = `${developerName} · ${t.pageTitle}`;
+const getOfficialLocalePath = (targetLocale: Locale) => getRelativeLocaleUrl(targetLocale);
+const canonicalPath = getOfficialLocalePath(locale);
+const buildHeroIntro = () => {
+  if (locale === 'ja') {
+    return `${developerName}${t.heroIntroSuffix}`;
+  }
+
+  if (locale === 'en') {
+    return `${t.heroIntroPrefix} ${developerName}. ${t.heroIntroSuffix}`;
+  }
+
+  return `${t.heroIntroPrefix}${developerName}${t.heroIntroSuffix}`;
+};
+---
+
+<!doctype html>
+<html lang={localeMeta[locale].htmlLang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={t.metaDescription} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f3ea" />
+    <link rel="canonical" href={canonicalPath} />
+    {locales.map((availableLocale) => (
+      <link rel="alternate" hreflang={localeMeta[availableLocale].htmlLang} href={getOfficialLocalePath(availableLocale)} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href="/" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <main class="site-shell">
+      <nav class="language-switcher" aria-label={t.languageNavLabel}>
+        {locales.map((availableLocale) => (
+          <a
+            class:list={["language-switcher__link", { "language-switcher__link--active": availableLocale === locale }]}
+            href={getOfficialLocalePath(availableLocale)}
+            lang={localeMeta[availableLocale].htmlLang}
+            aria-current={availableLocale === locale ? 'page' : undefined}
+          >
+            {localeMeta[availableLocale].nativeName}
+          </a>
+        ))}
+      </nav>
+
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__copy">
+          <p class="eyebrow">{t.heroEyebrow}</p>
+          <h1 id="hero-title">{t.heroTitle}</h1>
+          <p class="hero__intro">{buildHeroIntro()}</p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#apps">{t.viewApps}</a>
+            <a class="button button--ghost" href={developer.appStoreUrl} target="_blank" rel="noreferrer">{t.appStoreHome}</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label={t.featuredAppLabel}>
+          <div class="phone-frame phone-frame--iphone15-pro" aria-label={t.phoneModelLabel}>
+            <div class="phone-frame__status" aria-hidden="true"></div>
+            <div class="phone-frame__app" style={`--accent: ${featuredApp.accent}`}>
+              <img
+                class="app-icon app-icon--large"
+                src={featuredApp.iconUrl}
+                alt={`${featuredApp.name} App Icon`}
+                loading="eager"
+                decoding="async"
+              />
+              <p>{t.newestRelease}</p>
+              <h2>{featuredApp.name}</h2>
+              <span>{featuredApp.subtitle}</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="stats" aria-label={t.overviewLabel}>
+        <div>
+          <strong>{apps.length}</strong>
+          <span>{t.appCount}</span>
+        </div>
+        <div>
+          <strong>{categories.length}</strong>
+          <span>{t.categoryCount}</span>
+        </div>
+        <div>
+          <strong>{t.mobileFirstValue}</strong>
+          <span>{t.mobileFirstLabel}</span>
+        </div>
+      </section>
+
+      <section id="apps" class="apps-section" aria-labelledby="apps-title">
+        <div class="section-heading">
+          <p class="eyebrow">{t.appsEyebrow}</p>
+          <h2 id="apps-title">{t.appsTitle}</h2>
+          <p>{t.appsIntro}</p>
+        </div>
+
+        <div class="app-grid">
+          {[featuredApp, ...otherApps].map((app) => (
+            <article class:list={["app-card", { "app-card--featured": app.featured }]} style={`--accent: ${app.accent}`}>
+              <div class="app-card__top">
+                <img
+                  class="app-icon"
+                  src={app.iconUrl}
+                  alt={`${app.name} App Icon`}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="category">{app.category}</span>
+              </div>
+              <h3>{app.name}</h3>
+              <p class="subtitle">{app.subtitle}</p>
+              <p class="description">{app.description}</p>
+              <div class="platforms" aria-label={`${app.name} ${t.platformsLabel}`}>
+                {app.platforms.map((platform) => <span>{platform}</span>)}
+              </div>
+              <div class="tags" aria-label={`${app.name} ${t.tagsLabel}`}>
+                {app.tags.map((tag) => <span>#{tag}</span>)}
+              </div>
+              <a class="store-link" href={app.storeUrl} target="_blank" rel="noreferrer" aria-label={`${t.appStoreAriaPrefix} ${app.name}`}>
+                App Store
+                <span aria-hidden="true">↗</span>
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="contact" aria-labelledby="contact-title">
+        <div>
+          <p class="eyebrow">{t.contactEyebrow}</p>
+          <h2 id="contact-title">{t.contactTitle}</h2>
+          <p>{t.contactText}</p>
+        </div>
+        <div class="contact__actions">
+          <a class="button button--primary" href={`mailto:${developer.email}`}>{t.email}</a>
+          <a class="button button--ghost" href={developer.appStoreUrl} target="_blank" rel="noreferrer">{t.openAppStore}</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
