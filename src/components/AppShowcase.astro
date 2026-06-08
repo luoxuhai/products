@@ -9,6 +9,7 @@ const developerName = developer.name[locale];
 const localizedApps = apps.map((app) => ({ ...app, ...app.content[locale] }));
 const featuredApp = localizedApps.find((app) => app.featured) ?? localizedApps[0];
 const otherApps = localizedApps.filter((app) => app.id !== featuredApp.id);
+const maintenanceDays = (new Date().getFullYear() - 2020) * 365;
 const pageTitle = `${developerName} · ${t.pageTitle}`;
 const getOfficialLocalePath = (targetLocale: Locale) => getRelativeLocaleUrl(targetLocale);
 const canonicalPath = getOfficialLocalePath(locale);
@@ -88,7 +89,7 @@ const buildHeroIntro = () => {
 
       <section class="stats" aria-label={t.overviewLabel}>
         <div>
-          <strong>{apps.length}</strong>
+          <strong>{apps.length}{t.publishedProductsUnit}</strong>
           <span>{t.publishedProductsLabel}</span>
         </div>
         <div>
@@ -100,7 +101,7 @@ const buildHeroIntro = () => {
           <span>{t.nativeExperienceLabel}</span>
         </div>
         <div>
-          <strong>{t.maintenanceValue}</strong>
+          <strong>{maintenanceDays}{t.daysUnit}</strong>
           <span>{t.maintenanceLabel}</span>
         </div>
       </section>
