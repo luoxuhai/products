@@ -66,21 +66,23 @@ const buildHeroIntro = () => {
           </div>
         </div>
 
-        <aside class="hero-card" aria-label={t.featuredAppLabel}>
-          <div class="phone-frame phone-frame--iphone15-pro" aria-label={t.phoneModelLabel}>
-            <div class="phone-frame__status" aria-hidden="true"></div>
-            <div class="phone-frame__app" style={`--accent: ${featuredApp.accent}`}>
-              <img
-                class="app-icon app-icon--large"
-                src={featuredApp.iconUrl}
-                alt={`${featuredApp.name} App Icon`}
-                loading="eager"
-                decoding="async"
-              />
-              <p>{t.newestRelease}</p>
-              <h2>{featuredApp.name}</h2>
-              <span>{featuredApp.subtitle}</span>
-            </div>
+        <aside class="hero-card" aria-label={t.appConstellationLabel}>
+          <div class="app-constellation" aria-hidden="true">
+            {localizedApps.map((app, index) => (
+              <div class={`constellation-icon constellation-icon--${index + 1}`} style={`--accent: ${app.accent}`}>
+                <img
+                  class="app-icon"
+                  src={app.iconUrl}
+                  alt=""
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  decoding="async"
+                />
+              </div>
+            ))}
+            <div class="constellation-glow constellation-glow--one"></div>
+            <div class="constellation-glow constellation-glow--two"></div>
+            <div class="constellation-ring constellation-ring--one"></div>
+            <div class="constellation-ring constellation-ring--two"></div>
           </div>
         </aside>
       </section>
@@ -138,17 +140,18 @@ const buildHeroIntro = () => {
         </div>
       </section>
 
-      <section class="contact" aria-labelledby="contact-title">
+      <footer class="about" aria-labelledby="about-title">
         <div>
-          <p class="eyebrow">{t.contactEyebrow}</p>
-          <h2 id="contact-title">{t.contactTitle}</h2>
-          <p>{t.contactText}</p>
+          <p class="eyebrow">{t.aboutEyebrow}</p>
+          <h2 id="about-title">{t.aboutTitle}</h2>
+          <p>{t.aboutText}</p>
         </div>
-        <div class="contact__actions">
-          <a class="button button--primary" href={`mailto:${developer.email}`}>{t.email}</a>
-          <a class="button button--ghost" href={developer.appStoreUrl} target="_blank" rel="noreferrer">{t.openAppStore}</a>
+        <div class="about__links">
+          <a class="button button--primary" href={developer.githubUrl} target="_blank" rel="noreferrer">GitHub</a>
+          <a class="button button--ghost" href={developer.xUrl} target="_blank" rel="noreferrer">X</a>
+          <a class="button button--ghost" href={`mailto:${developer.email}`}>{t.email}</a>
         </div>
-      </section>
+      </footer>
     </main>
   </body>
 </html>
