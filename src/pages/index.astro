@@ -1,5 +1,62 @@
 ---
-import AppShowcase from '../components/AppShowcase.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { defaultLocale, localeMeta, locales } from '../data/apps';
+
+const fallbackUrl = getRelativeLocaleUrl(defaultLocale);
+const localeRoutes = Object.fromEntries(locales.map((locale) => [locale, getRelativeLocaleUrl(locale)]));
+const languageCodeMap = {
+  en: 'en',
+  'en-us': 'en',
+  'en-gb': 'en',
+  'en-ca': 'en',
+  'en-au': 'en',
+  zh: 'zh-cn',
+  'zh-cn': 'zh-cn',
+  'zh-hans': 'zh-cn',
+  'zh-sg': 'zh-cn',
+  'zh-tw': 'zh-tw',
+  'zh-hant': 'zh-tw',
+  'zh-hk': 'zh-tw',
+  'zh-mo': 'zh-tw',
+  ja: 'ja',
+  'ja-jp': 'ja',
+};
 ---
 
-<AppShowcase />
+<!doctype html>
+<html lang={localeMeta[defaultLocale].htmlLang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={fallbackUrl} />
+    <meta http-equiv="refresh" content={`1; url=${fallbackUrl}`} />
+    <title>Xuhai Luo · App Portfolio</title>
+    <script define:vars={{ fallbackUrl, languageCodeMap, localeRoutes }}>
+      const normalizeLanguage = (language) => language.toLowerCase().replace(/_/g, '-');
+      const resolveLocale = (language) => {
+        const normalized = normalizeLanguage(language);
+
+        if (languageCodeMap[normalized]) {
+          return languageCodeMap[normalized];
+        }
+
+        const baseLanguage = normalized.split('-')[0];
+        return languageCodeMap[baseLanguage];
+      };
+
+      const preferredLocale = (navigator.languages || [navigator.language])
+        .filter(Boolean)
+        .map(resolveLocale)
+        .find(Boolean);
+      const targetUrl = localeRoutes[preferredLocale] || fallbackUrl;
+
+      if (window.location.pathname !== targetUrl) {
+        window.location.replace(targetUrl);
+      }
+    </script>
+  </head>
+  <body>
+    <a href={fallbackUrl}>Continue</a>
+  </body>
+</html>
