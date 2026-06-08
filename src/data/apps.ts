@@ -7,7 +7,7 @@ export type App = {
   platforms: string[];
   tags: string[];
   accent: string;
-  icon: string;
+  iconUrl: string;
   storeUrl: string;
   featured?: boolean;
 };
@@ -23,7 +23,7 @@ export const apps: App[] = [
     platforms: ['iPhone', 'Apple Watch'],
     tags: ['数字排毒', '专注', '番茄时钟', '距离提醒'],
     accent: '#5b8cff',
-    icon: '📵',
+    iconUrl: 'https://api.appmetadata.com/api/v1/apple/apps/6744548607/artwork/512/image',
     storeUrl:
       'https://apps.apple.com/cn/app/%E5%88%AB%E7%A2%B0%E6%89%8B%E6%9C%BA-%E7%A6%BB%E6%89%8B%E6%9C%BA%E8%BF%9C%E4%B8%80%E7%82%B9-%E4%B8%8D%E5%81%9A%E6%89%8B%E6%9C%BA%E6%8E%A7-%E4%B8%93%E6%B3%A8%E5%BD%93%E4%B8%8B-%E4%B8%8D%E7%8E%A9%E6%89%8B%E6%9C%BA/id6744548607',
     featured: true,
@@ -38,7 +38,7 @@ export const apps: App[] = [
     platforms: ['iPhone', 'iPad', 'Apple Watch'],
     tags: ['疲劳监控', '低头提醒', '备考', '熬夜'],
     accent: '#f59e0b',
-    icon: '👀',
+    iconUrl: 'https://api.appmetadata.com/api/v1/apple/apps/6479893638/artwork/512/image',
     storeUrl:
       'https://apps.apple.com/cn/app/%E7%9E%8C%E7%9D%A1%E6%8F%90%E9%86%92-%E7%9B%91%E6%8E%A7%E7%96%B2%E5%8A%B3%E7%8A%B6%E6%80%81-%E6%97%B6%E5%88%BB%E4%BF%9D%E6%8C%81%E6%B8%85%E9%86%92/id6479893638',
   },
@@ -52,7 +52,7 @@ export const apps: App[] = [
     platforms: ['iPhone', 'iPad'],
     tags: ['LiDAR', '测距', '水平仪', '装修'],
     accent: '#22c55e',
-    icon: '📏',
+    iconUrl: 'https://api.appmetadata.com/api/v1/apple/apps/6466744678/artwork/512/image',
     storeUrl:
       'https://apps.apple.com/cn/app/%E6%BF%80%E5%85%89%E6%B5%8B%E8%B7%9D%E4%BB%AA-%E6%B7%B1%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E8%B6%85%E9%AB%98%E7%B2%BE%E5%BA%A6%E6%B5%8B%E8%B7%9D-%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE-%E5%8E%9F%E6%B7%B1%E6%84%9F%E7%9B%B8%E6%9C%BA/id6466744678',
   },
@@ -66,7 +66,7 @@ export const apps: App[] = [
     platforms: ['iPhone', 'iPad'],
     tags: ['无障碍', '避障', '距离检测', '出行辅助'],
     accent: '#8b5cf6',
-    icon: '🦯',
+    iconUrl: 'https://api.appmetadata.com/api/v1/apple/apps/6461118479/artwork/512/image',
     storeUrl:
       'https://apps.apple.com/cn/app/%E7%9B%B2%E6%9D%96-%E6%A3%80%E6%B5%8B%E9%9A%9C%E7%A2%8D%E7%89%A9%E8%B7%9D%E7%A6%BB-%E8%A7%86%E9%9A%9C%E4%B8%8D%E5%86%8D%E6%98%AF%E9%9A%9C%E7%A2%8D-%E7%9B%B2%E4%BA%BA%E9%81%BF%E9%9A%9C%E4%B8%93%E7%94%A8/id6461118479',
   },
@@ -80,7 +80,7 @@ export const apps: App[] = [
     platforms: ['iPhone', 'iPad'],
     tags: ['AI', '英语语法', '长难句', '词典'],
     accent: '#ec4899',
-    icon: '📚',
+    iconUrl: 'https://api.appmetadata.com/api/v1/apple/apps/6447102989/artwork/512/image',
     storeUrl:
       'https://apps.apple.com/cn/app/%E7%88%B1%E8%AF%AD%E6%B3%95-igrammar-ai%E6%99%BA%E8%83%BD%E5%88%86%E6%9E%90%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95/id6447102989',
   },
@@ -94,7 +94,7 @@ export const apps: App[] = [
     platforms: ['iPhone', 'iPad', 'Apple Watch'],
     tags: ['夜视', 'LiDAR', '红外相机', '扫描成像'],
     accent: '#06b6d4',
-    icon: '🌙',
+    iconUrl: 'https://api.appmetadata.com/api/v1/apple/apps/1668629667/artwork/512/image',
     storeUrl:
       'https://apps.apple.com/cn/app/%E5%A4%9C%E8%A7%86%E4%BB%AA-%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE-%E5%8E%9F%E6%B7%B1%E6%84%9F%E7%9B%B8%E6%9C%BA%E6%89%AB%E6%8F%8F%E6%88%90%E5%83%8F-%E6%97%A0%E5%85%89%E7%8E%AF%E5%A2%83%E6%8B%8D%E6%91%84%E5%BD%95%E5%83%8F/id1668629667',
   },
