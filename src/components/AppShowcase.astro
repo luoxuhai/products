@@ -9,7 +9,6 @@ const developerName = developer.name[locale];
 const localizedApps = apps.map((app) => ({ ...app, ...app.content[locale] }));
 const featuredApp = localizedApps.find((app) => app.featured) ?? localizedApps[0];
 const otherApps = localizedApps.filter((app) => app.id !== featuredApp.id);
-const categories = [...new Set(localizedApps.map((app) => app.category))];
 const pageTitle = `${developerName} · ${t.pageTitle}`;
 const getOfficialLocalePath = (targetLocale: Locale) => getRelativeLocaleUrl(targetLocale);
 const canonicalPath = getOfficialLocalePath(locale);
@@ -90,15 +89,19 @@ const buildHeroIntro = () => {
       <section class="stats" aria-label={t.overviewLabel}>
         <div>
           <strong>{apps.length}</strong>
-          <span>{t.appCount}</span>
+          <span>{t.publishedProductsLabel}</span>
         </div>
         <div>
-          <strong>{categories.length}</strong>
-          <span>{t.categoryCount}</span>
+          <strong>{t.originalValue}</strong>
+          <span>{t.originalLabel}</span>
         </div>
         <div>
-          <strong>{t.mobileFirstValue}</strong>
-          <span>{t.mobileFirstLabel}</span>
+          <strong>{t.nativeExperienceValue}</strong>
+          <span>{t.nativeExperienceLabel}</span>
+        </div>
+        <div>
+          <strong>{t.maintenanceValue}</strong>
+          <span>{t.maintenanceLabel}</span>
         </div>
       </section>
 
