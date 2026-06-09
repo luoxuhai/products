@@ -199,7 +199,7 @@ export const apps: App[] = [
     platforms: ["iPhone", "Apple Watch"],
     accent: "#5b8cff",
     iconUrl:
-      "https://api.appmetadata.com/api/v1/apple/apps/6744548607/artwork/512/image",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7b/92/d2/7b92d242-f488-045f-bcc3-317ee3ff54a7/AppIcon-0-0-1x_U007ephone-0-1-sRGB-85-220.png/512x512bb.jpg",
     appStoreId: "6744548607",
     featured: true,
     content: {
@@ -242,7 +242,7 @@ export const apps: App[] = [
     platforms: ["iPhone", "iPad", "Apple Watch"],
     accent: "#f59e0b",
     iconUrl:
-      "https://api.appmetadata.com/api/v1/apple/apps/6479893638/artwork/512/image",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/24/91/21/24912185-f68f-fd09-03af-7931d15e8280/AppIcon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg",
     appStoreId: "6479893638",
     content: {
       "zh-cn": {
@@ -289,7 +289,7 @@ export const apps: App[] = [
     platforms: ["iPhone", "iPad"],
     accent: "#22c55e",
     iconUrl:
-      "https://api.appmetadata.com/api/v1/apple/apps/6466744678/artwork/512/image",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/29/8d/d6/298dd6dc-2de0-8183-dc22-2cd88797af59/AppIcon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg",
     appStoreId: "6466744678",
     content: {
       "zh-cn": {
@@ -331,7 +331,7 @@ export const apps: App[] = [
     platforms: ["iPhone", "iPad"],
     accent: "#8b5cf6",
     iconUrl:
-      "https://api.appmetadata.com/api/v1/apple/apps/6461118479/artwork/512/image",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/fc/8a/fe/fc8afe0f-b9a5-cc54-bf99-95895dc67cae/AppIcon-0-0-1x_U007ephone-0-1-sRGB-85-220.png/512x512bb.jpg",
     appStoreId: "6461118479",
     content: {
       "zh-cn": {
@@ -420,7 +420,7 @@ export const apps: App[] = [
     platforms: ["iPhone", "iPad", "Apple Watch"],
     accent: "#06b6d4",
     iconUrl:
-      "https://api.appmetadata.com/api/v1/apple/apps/1668629667/artwork/512/image",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f6/e5/5d/f6e55dfe-7a1d-5791-559d-d9f684aa686b/AppIcon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg",
     appStoreId: "1668629667",
     content: {
       "zh-cn": {
