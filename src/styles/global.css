@@ -369,23 +369,32 @@ h1 {
 .constellation-icon {
   --icon-size: 88px;
   --icon-radius: 30px;
-  top: calc(var(--icon-size) / -2);
+  --hitbox-x: 14px;
+  --hitbox-top: 14px;
+  --hitbox-bottom: 36px;
+  --hitbox-width: calc(var(--icon-size) + (var(--hitbox-x) * 2));
+  --hitbox-height: calc(var(--icon-size) + var(--hitbox-top) + var(--hitbox-bottom));
+  top: calc((var(--icon-size) / -2) - var(--hitbox-top));
   left: 50%;
   z-index: 2;
-  display: grid;
-  width: var(--icon-size);
-  height: var(--icon-size);
-  margin-left: calc(var(--icon-size) / -2);
-  place-items: center;
+  display: block;
+  width: var(--hitbox-width);
+  height: var(--hitbox-height);
+  margin-left: calc(var(--hitbox-width) / -2);
   transform: rotate(var(--orbit-start-inverse));
   transform-origin: 50% calc(var(--hitbox-top) + (var(--icon-size) / 2));
   animation: constellation-icon-upright var(--orbit-duration) linear infinite;
   cursor: pointer;
   outline: none;
+  pointer-events: auto;
   will-change: transform;
 }
 
 .constellation-icon .app-icon {
+  position: absolute;
+  top: var(--hitbox-top);
+  left: var(--hitbox-x);
+  z-index: 1;
   width: var(--icon-size);
   height: var(--icon-size);
   border-radius: var(--icon-radius);
@@ -403,7 +412,7 @@ h1 {
 
 .constellation-icon__name {
   position: absolute;
-  top: calc(100% + 10px);
+  top: calc(var(--hitbox-top) + var(--icon-size) + 10px);
   left: 50%;
   width: max-content;
   max-width: 132px;
@@ -422,6 +431,7 @@ h1 {
   transform: translate(-50%, -4px);
   transition: opacity 160ms ease, transform 160ms ease;
   backdrop-filter: blur(16px);
+  z-index: 2;
 }
 
 .constellation-icon:hover .constellation-icon__name,
@@ -465,11 +475,6 @@ h1 {
 .constellation-orbit--6 {
   --orbit-start: 300deg;
   --orbit-start-inverse: -300deg;
-}
-
-.constellation-icon--1 {
-  --icon-size: 112px;
-  --icon-radius: 36px;
 }
 
 @keyframes constellation-orbit {
@@ -931,9 +936,11 @@ h1 {
     --icon-radius: 26px;
   }
 
-  .constellation-icon--1 {
-    --icon-size: 96px;
-    --icon-radius: 32px;
+  .stats,
+  .app-grid,
+  .project-grid--featured,
+  .project-grid--compact {
+    grid-template-columns: 1fr 1fr;
   }
 
   .stats,
@@ -1001,11 +1008,6 @@ h1 {
   .constellation-icon {
     --icon-size: 66px;
     --icon-radius: 22px;
-  }
-
-  .constellation-icon--1 {
-    --icon-size: 82px;
-    --icon-radius: 28px;
   }
 
   .stats,
