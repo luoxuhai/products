@@ -66,18 +66,25 @@ const buildHeroIntro = () => `${independentExperienceYears}${t.heroIntroExperien
   <body>
     <main class="site-shell">
       <div class="top-controls">
-        <nav class="language-switcher" aria-label={t.languageNavLabel}>
-          {locales.map((availableLocale) => (
-            <a
-              class:list={["language-switcher__link", { "language-switcher__link--active": availableLocale === locale }]}
-              href={getOfficialLocalePath(availableLocale)}
-              lang={localeMeta[availableLocale].htmlLang}
-              aria-current={availableLocale === locale ? 'page' : undefined}
-            >
-              {localeMeta[availableLocale].nativeName}
-            </a>
-          ))}
-        </nav>
+        <div class="language-switcher">
+          <label class="visually-hidden" for="language-select">{t.languageNavLabel}</label>
+          <select
+            id="language-select"
+            class="language-switcher__select"
+            aria-label={t.languageNavLabel}
+            onchange="window.location.href = this.value"
+          >
+            {locales.map((availableLocale) => (
+              <option
+                value={getOfficialLocalePath(availableLocale)}
+                selected={availableLocale === locale}
+                lang={localeMeta[availableLocale].htmlLang}
+              >
+                {localeMeta[availableLocale].nativeName}
+              </option>
+            ))}
+          </select>
+        </div>
         <button class="theme-toggle" type="button" data-theme-toggle aria-label={t.themeToggleLabel} aria-pressed="false">
           <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path fill="currentColor" d="M21 14.6A8.83 8.83 0 0 1 9.4 3a.75.75 0 0 0-.78-1.04A10.33 10.33 0 1 0 22.04 15.38a.75.75 0 0 0-1.04-.78ZM11.67 20.5a8.83 8.83 0 0 1-5.9-15.4 10.33 10.33 0 0 0 13.12 13.12 8.8 8.8 0 0 1-7.22 2.28Z" />
@@ -100,10 +107,16 @@ const buildHeroIntro = () => `${independentExperienceYears}${t.heroIntroExperien
         </div>
 
         <aside class="hero-card" aria-label={t.appConstellationLabel}>
-          <div class="app-constellation" aria-hidden="true">
+          <div class="app-constellation">
             {localizedApps.map((app, index) => (
               <div class={`constellation-orbit constellation-orbit--${index + 1}`} style={`--accent: ${app.accent}`}>
-                <div class={`constellation-icon constellation-icon--${index + 1}`}>
+                <a
+                  class={`constellation-icon constellation-icon--${index + 1}`}
+                  href={app.storeUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`${t.appStoreAriaPrefix} ${app.name}`}
+                >
                   <img
                     class="app-icon"
                     src={app.iconUrl}
@@ -111,13 +124,14 @@ const buildHeroIntro = () => `${independentExperienceYears}${t.heroIntroExperien
                     loading={index === 0 ? 'eager' : 'lazy'}
                     decoding="async"
                   />
-                </div>
+                  <span class="constellation-icon__name">{app.name}</span>
+                </a>
               </div>
             ))}
-            <div class="constellation-glow constellation-glow--one"></div>
-            <div class="constellation-glow constellation-glow--two"></div>
-            <div class="constellation-ring constellation-ring--one"></div>
-            <div class="constellation-ring constellation-ring--two"></div>
+            <div class="constellation-glow constellation-glow--one" aria-hidden="true"></div>
+            <div class="constellation-glow constellation-glow--two" aria-hidden="true"></div>
+            <div class="constellation-ring constellation-ring--one" aria-hidden="true"></div>
+            <div class="constellation-ring constellation-ring--two" aria-hidden="true"></div>
           </div>
         </aside>
       </section>
