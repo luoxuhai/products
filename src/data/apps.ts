@@ -32,6 +32,21 @@ export type App = {
   content: Record<Locale, LocalizedAppContent>;
 };
 
+export type LocalizedProjectContent = {
+  description: string;
+};
+
+export type OpenSourceProject = {
+  id: string;
+  name: string;
+  repository: string;
+  url: string;
+  language: string;
+  accent: string;
+  tags: string[];
+  content: Record<Locale, LocalizedProjectContent>;
+};
+
 export const ui = {
   "zh-cn": {
     metaDescription:
@@ -60,6 +75,15 @@ export const ui = {
     appsTitle: "全部作品",
     appsIntro:
       "从专注习惯、无障碍辅助到深度传感器工具，每款 App 都围绕一个清晰问题展开。",
+    openSourceEyebrow: "Open Source",
+    openSourceTitle: "我的开源项目",
+    openSourceIntro:
+      "把 App 开发、WebAssembly、点云处理和内容数据库中的实践沉淀为可复用的开源项目。",
+    contributionsEyebrow: "Contributions",
+    contributionsTitle: "我的开源贡献",
+    contributionsIntro:
+      "持续参与 React Native、Expo、three.js 和 Point Cloud Library 等社区项目，向更大的技术生态提交代码。",
+    projectRepoLabel: "仓库",
     platformsLabel: "支持平台",
     tagsLabel: "标签",
     appStoreAriaPrefix: "在 App Store 查看",
@@ -99,6 +123,15 @@ export const ui = {
     appsTitle: "全部作品",
     appsIntro:
       "從專注習慣、無障礙輔助到深度感測器工具，每款 App 都圍繞一個清晰問題展開。",
+    openSourceEyebrow: "Open Source",
+    openSourceTitle: "我的開源項目",
+    openSourceIntro:
+      "把 App 開發、WebAssembly、點雲處理和內容資料庫中的實踐沉澱為可複用的開源項目。",
+    contributionsEyebrow: "Contributions",
+    contributionsTitle: "我的開源貢獻",
+    contributionsIntro:
+      "持續參與 React Native、Expo、three.js 和 Point Cloud Library 等社群項目，向更大的技術生態提交程式碼。",
+    projectRepoLabel: "倉庫",
     platformsLabel: "支援平台",
     tagsLabel: "標籤",
     appStoreAriaPrefix: "在 App Store 查看",
@@ -138,6 +171,15 @@ export const ui = {
     appsTitle: "All apps",
     appsIntro:
       "From focus habits and accessibility support to depth-sensor tools, every app is built around a clearly defined problem.",
+    openSourceEyebrow: "Open Source",
+    openSourceTitle: "My open-source projects",
+    openSourceIntro:
+      "Reusable projects shaped by app development, WebAssembly, point-cloud processing, and content-database work.",
+    contributionsEyebrow: "Contributions",
+    contributionsTitle: "My open-source contributions",
+    contributionsIntro:
+      "Code contributions across larger ecosystems including React Native, Expo, three.js, and the Point Cloud Library.",
+    projectRepoLabel: "Repository",
     platformsLabel: "Supported platforms",
     tagsLabel: "Tags",
     appStoreAriaPrefix: "View on the App Store:",
@@ -178,6 +220,15 @@ export const ui = {
     appsTitle: "すべての作品",
     appsIntro:
       "集中習慣、アクセシビリティ支援、深度センサーのツールまで、各 App は明確な課題を中心に設計されています。",
+    openSourceEyebrow: "Open Source",
+    openSourceTitle: "私のオープンソースプロジェクト",
+    openSourceIntro:
+      "App 開発、WebAssembly、点群処理、コンテンツデータベースでの実践を再利用できるプロジェクトとして公開しています。",
+    contributionsEyebrow: "Contributions",
+    contributionsTitle: "私のオープンソース貢献",
+    contributionsIntro:
+      "React Native、Expo、three.js、Point Cloud Library など、より大きな技術エコシステムへコードを貢献しています。",
+    projectRepoLabel: "リポジトリ",
     platformsLabel: "対応プラットフォーム",
     tagsLabel: "タグ",
     appStoreAriaPrefix: "App Store で見る:",
@@ -455,6 +506,187 @@ export const apps: App[] = [
         category: "写真／ビデオ",
         tags: ["ナイトビジョン", "LiDAR", "赤外線カメラ", "スキャン成像"],
       },
+    },
+  },
+];
+
+export const openSourceProjects: OpenSourceProject[] = [
+  {
+    id: "pcl-js",
+    name: "pcl.js",
+    repository: "luoxuhai/pcl.js",
+    url: "https://github.com/luoxuhai/pcl.js",
+    language: "TypeScript",
+    accent: "#0ea5e9",
+    tags: ["WebAssembly", "Point Cloud", "PCL"],
+    content: {
+      "zh-cn": {
+        description: "在浏览器运行 Point Cloud Library，让点云处理能力通过 WebAssembly 进入 Web 应用。",
+      },
+      "zh-tw": {
+        description: "在瀏覽器運行 Point Cloud Library，讓點雲處理能力透過 WebAssembly 進入 Web 應用。",
+      },
+      en: {
+        description: "Point Cloud Library in the browser, bringing point-cloud processing to web apps with WebAssembly.",
+      },
+      ja: {
+        description: "Point Cloud Library をブラウザで動かし、WebAssembly で点群処理を Web アプリへ届けます。",
+      },
+    },
+  },
+  {
+    id: "chinese-novel",
+    name: "chinese-novel",
+    repository: "luoxuhai/chinese-novel",
+    url: "https://github.com/luoxuhai/chinese-novel",
+    language: "HTML",
+    accent: "#f97316",
+    tags: ["Database", "Literature", "Chinese classics"],
+    content: {
+      "zh-cn": {
+        description: "中国古典小说数据库，整理经典文本内容，方便检索、阅读与二次创作。",
+      },
+      "zh-tw": {
+        description: "中國古典小說資料庫，整理經典文本內容，方便檢索、閱讀與二次創作。",
+      },
+      en: {
+        description: "A Chinese classical novel database that organizes classic texts for search, reading, and reuse.",
+      },
+      ja: {
+        description: "中国古典小説のデータベース。検索、読書、再利用しやすい形で古典テキストを整理しています。",
+      },
+    },
+  },
+  {
+    id: "clang-js",
+    name: "clang.js",
+    repository: "luoxuhai/clang.js",
+    url: "https://github.com/luoxuhai/clang.js",
+    language: "JavaScript",
+    accent: "#6366f1",
+    tags: ["C/C++", "Compiler", "Browser"],
+    content: {
+      "zh-cn": {
+        description: "在浏览器中实时运行 C/C++ 代码，把编译与执行能力带入前端环境。",
+      },
+      "zh-tw": {
+        description: "在瀏覽器中即時運行 C/C++ 程式碼，把編譯與執行能力帶入前端環境。",
+      },
+      en: {
+        description: "Run C/C++ code in the browser, bringing compile-and-execute workflows into frontend environments.",
+      },
+      ja: {
+        description: "ブラウザで C/C++ コードを実行し、コンパイルと実行のワークフローをフロントエンドへ持ち込みます。",
+      },
+    },
+  },
+  {
+    id: "react-native-tinykit",
+    name: "react-native-tinykit",
+    repository: "luoxuhai/react-native-tinykit",
+    url: "https://github.com/luoxuhai/react-native-tinykit",
+    language: "TypeScript",
+    accent: "#14b8a6",
+    tags: ["React Native", "iOS", "Toolkit"],
+    content: {
+      "zh-cn": {
+        description: "轻量级 React Native iOS 工具包，封装常用原生能力，降低移动端功能集成成本。",
+      },
+      "zh-tw": {
+        description: "輕量級 React Native iOS 工具包，封裝常用原生能力，降低行動端功能整合成本。",
+      },
+      en: {
+        description: "A lightweight React Native toolkit for iOS that packages essential native utilities.",
+      },
+      ja: {
+        description: "iOS 向けの軽量 React Native ツールキット。よく使うネイティブ機能をまとめています。",
+      },
+    },
+  },
+  {
+    id: "alock",
+    name: "Alock",
+    repository: "luoxuhai/Alock",
+    url: "https://github.com/luoxuhai/Alock",
+    language: "TypeScript",
+    accent: "#ec4899",
+    tags: ["Privacy", "iOS", "App hiding"],
+    content: {
+      "zh-cn": {
+        description: "免费隐藏指定 App 的隐私工具，让被隐藏 App 从主屏幕、App 资源库、搜索和系统设置中不可见。",
+      },
+      "zh-tw": {
+        description: "免費隱藏指定 App 的隱私工具，讓被隱藏 App 從主畫面、App 資料庫、搜尋和系統設定中不可見。",
+      },
+      en: {
+        description: "A privacy-focused tool for hiding selected apps from the Home Screen, App Library, search, and settings.",
+      },
+      ja: {
+        description: "選択した App をホーム画面、App ライブラリ、検索、設定から隠すプライバシーツールです。",
+      },
+    },
+  },
+];
+
+export const contributionProjects: OpenSourceProject[] = [
+  {
+    id: "react-native",
+    name: "React Native",
+    repository: "facebook/react-native",
+    url: "https://github.com/facebook/react-native",
+    language: "C++",
+    accent: "#61dafb",
+    tags: ["Mobile", "React", "Framework"],
+    content: {
+      "zh-cn": { description: "使用 React 构建原生应用的框架，参与其移动端基础设施与开发体验建设。" },
+      "zh-tw": { description: "使用 React 建構原生應用的框架，參與其行動端基礎設施與開發體驗建設。" },
+      en: { description: "A framework for building native apps with React; contributions touch mobile infrastructure and developer experience." },
+      ja: { description: "React でネイティブアプリを構築するフレームワーク。モバイル基盤と開発体験に貢献しています。" },
+    },
+  },
+  {
+    id: "expo",
+    name: "Expo",
+    repository: "expo/expo",
+    url: "https://github.com/expo/expo",
+    language: "TypeScript",
+    accent: "#000020",
+    tags: ["React Native", "iOS", "Android"],
+    content: {
+      "zh-cn": { description: "用于构建 Android、iOS 和 Web 通用原生应用的开源框架。" },
+      "zh-tw": { description: "用於建構 Android、iOS 和 Web 通用原生應用的開源框架。" },
+      en: { description: "An open-source framework for building universal native apps across Android, iOS, and the web." },
+      ja: { description: "Android、iOS、Web に対応するユニバーサルなネイティブアプリを作るためのオープンソースフレームワークです。" },
+    },
+  },
+  {
+    id: "three-js",
+    name: "three.js",
+    repository: "mrdoob/three.js",
+    url: "https://github.com/mrdoob/three.js",
+    language: "JavaScript",
+    accent: "#111827",
+    tags: ["3D", "WebGL", "Graphics"],
+    content: {
+      "zh-cn": { description: "JavaScript 3D 图形库，为 Web 端图形和可视化生态贡献代码。" },
+      "zh-tw": { description: "JavaScript 3D 圖形庫，為 Web 端圖形和視覺化生態貢獻程式碼。" },
+      en: { description: "A JavaScript 3D library powering graphics and visualization work on the web." },
+      ja: { description: "Web 上のグラフィックスと可視化を支える JavaScript 3D ライブラリです。" },
+    },
+  },
+  {
+    id: "pcl",
+    name: "Point Cloud Library",
+    repository: "PointCloudLibrary/pcl",
+    url: "https://github.com/PointCloudLibrary/pcl",
+    language: "C++",
+    accent: "#22c55e",
+    tags: ["Point Cloud", "C++", "3D"],
+    content: {
+      "zh-cn": { description: "点云处理领域的重要 C++ 库，支撑 3D 感知、测量和可视化能力。" },
+      "zh-tw": { description: "點雲處理領域的重要 C++ 函式庫，支撐 3D 感知、測量和視覺化能力。" },
+      en: { description: "A major C++ library for point-cloud processing, 3D perception, measurement, and visualization." },
+      ja: { description: "点群処理、3D 認識、測定、可視化を支える主要な C++ ライブラリです。" },
     },
   },
 ];
