@@ -55,7 +55,7 @@ export const ui = {
     languageNavLabel: "选择语言",
     themeToggleLabel: "切换深色模式",
     heroEyebrow: "Independent iOS Apps",
-    heroTitle: "每一个 App，都为解决一个问题而生。",
+    heroTitle: "每一个 App，都为解决一个问题而生",
     heroIntroExperienceSuffix:
       " 年独立开发经验，用设计与技术打磨细节，持续创造简洁、实用、可靠的 App。",
     viewApps: "查看 App",
@@ -72,7 +72,7 @@ export const ui = {
     daysUnit: "天",
     maintenanceLabel: "持续迭代",
     appsEyebrow: "All Apps",
-    appsTitle: "全部作品",
+    appsTitle: "我的App",
     appsIntro:
       "从专注习惯、无障碍辅助到深度传感器工具，每款 App 都围绕一个清晰问题展开。",
     openSourceEyebrow: "Open Source",
@@ -92,7 +92,7 @@ export const ui = {
     aboutDeveloperTitle: "苹果 App 独立开发者",
     aboutExperienceSuffix: "年独立开发经验",
     aboutSlogan: "为细节投入时间，为体验追求极致",
-    aboutText: "独立开发者，持续打磨面向真实需求的工具与体验。",
+    aboutText: "创造有趣、原创且独特的应用程序",
     email: "发送邮件",
     openAppStore: "打开 App Store",
   },
@@ -120,7 +120,7 @@ export const ui = {
     daysUnit: "天",
     maintenanceLabel: "持續迭代",
     appsEyebrow: "All Apps",
-    appsTitle: "全部作品",
+    appsTitle: "我的App",
     appsIntro:
       "從專注習慣、無障礙輔助到深度感測器工具，每款 App 都圍繞一個清晰問題展開。",
     openSourceEyebrow: "Open Source",
@@ -168,7 +168,7 @@ export const ui = {
     daysUnit: " days",
     maintenanceLabel: "Continuous iteration",
     appsEyebrow: "All Apps",
-    appsTitle: "All apps",
+    appsTitle: "My Apps",
     appsIntro:
       "From focus habits and accessibility support to depth-sensor tools, every app is built around a clearly defined problem.",
     openSourceEyebrow: "Open Source",
@@ -217,7 +217,7 @@ export const ui = {
     daysUnit: "日",
     maintenanceLabel: "継続改善",
     appsEyebrow: "All Apps",
-    appsTitle: "すべての作品",
+    appsTitle: "私の App",
     appsIntro:
       "集中習慣、アクセシビリティ支援、深度センサーのツールまで、各 App は明確な課題を中心に設計されています。",
     openSourceEyebrow: "Open Source",
@@ -521,16 +521,20 @@ export const openSourceProjects: OpenSourceProject[] = [
     tags: ["WebAssembly", "Point Cloud", "PCL"],
     content: {
       "zh-cn": {
-        description: "在浏览器运行 Point Cloud Library，让点云处理能力通过 WebAssembly 进入 Web 应用。",
+        description:
+          "在浏览器运行 Point Cloud Library，让点云处理能力通过 WebAssembly 进入 Web 应用。",
       },
       "zh-tw": {
-        description: "在瀏覽器運行 Point Cloud Library，讓點雲處理能力透過 WebAssembly 進入 Web 應用。",
+        description:
+          "在瀏覽器運行 Point Cloud Library，讓點雲處理能力透過 WebAssembly 進入 Web 應用。",
       },
       en: {
-        description: "Point Cloud Library in the browser, bringing point-cloud processing to web apps with WebAssembly.",
+        description:
+          "Point Cloud Library in the browser, bringing point-cloud processing to web apps with WebAssembly.",
       },
       ja: {
-        description: "Point Cloud Library をブラウザで動かし、WebAssembly で点群処理を Web アプリへ届けます。",
+        description:
+          "Point Cloud Library をブラウザで動かし、WebAssembly で点群処理を Web アプリへ届けます。",
       },
     },
   },
@@ -544,16 +548,20 @@ export const openSourceProjects: OpenSourceProject[] = [
     tags: ["Database", "Literature", "Chinese classics"],
     content: {
       "zh-cn": {
-        description: "中国古典小说数据库，整理经典文本内容，方便检索、阅读与二次创作。",
+        description:
+          "中国古典小说数据库，整理经典文本内容，方便检索、阅读与二次创作。",
       },
       "zh-tw": {
-        description: "中國古典小說資料庫，整理經典文本內容，方便檢索、閱讀與二次創作。",
+        description:
+          "中國古典小說資料庫，整理經典文本內容，方便檢索、閱讀與二次創作。",
       },
       en: {
-        description: "A Chinese classical novel database that organizes classic texts for search, reading, and reuse.",
+        description:
+          "A Chinese classical novel database that organizes classic texts for search, reading, and reuse.",
       },
       ja: {
-        description: "中国古典小説のデータベース。検索、読書、再利用しやすい形で古典テキストを整理しています。",
+        description:
+          "中国古典小説のデータベース。検索、読書、再利用しやすい形で古典テキストを整理しています。",
       },
     },
   },
@@ -567,16 +575,20 @@ export const openSourceProjects: OpenSourceProject[] = [
     tags: ["C/C++", "Compiler", "Browser"],
     content: {
       "zh-cn": {
-        description: "在浏览器中实时运行 C/C++ 代码，把编译与执行能力带入前端环境。",
+        description:
+          "在浏览器中实时运行 C/C++ 代码，把编译与执行能力带入前端环境。",
       },
       "zh-tw": {
-        description: "在瀏覽器中即時運行 C/C++ 程式碼，把編譯與執行能力帶入前端環境。",
+        description:
+          "在瀏覽器中即時運行 C/C++ 程式碼，把編譯與執行能力帶入前端環境。",
       },
       en: {
-        description: "Run C/C++ code in the browser, bringing compile-and-execute workflows into frontend environments.",
+        description:
+          "Run C/C++ code in the browser, bringing compile-and-execute workflows into frontend environments.",
       },
       ja: {
-        description: "ブラウザで C/C++ コードを実行し、コンパイルと実行のワークフローをフロントエンドへ持ち込みます。",
+        description:
+          "ブラウザで C/C++ コードを実行し、コンパイルと実行のワークフローをフロントエンドへ持ち込みます。",
       },
     },
   },
@@ -590,39 +602,20 @@ export const openSourceProjects: OpenSourceProject[] = [
     tags: ["React Native", "iOS", "Toolkit"],
     content: {
       "zh-cn": {
-        description: "轻量级 React Native iOS 工具包，封装常用原生能力，降低移动端功能集成成本。",
+        description:
+          "轻量级 React Native iOS 工具包，封装常用原生能力，降低移动端功能集成成本。",
       },
       "zh-tw": {
-        description: "輕量級 React Native iOS 工具包，封裝常用原生能力，降低行動端功能整合成本。",
+        description:
+          "輕量級 React Native iOS 工具包，封裝常用原生能力，降低行動端功能整合成本。",
       },
       en: {
-        description: "A lightweight React Native toolkit for iOS that packages essential native utilities.",
+        description:
+          "A lightweight React Native toolkit for iOS that packages essential native utilities.",
       },
       ja: {
-        description: "iOS 向けの軽量 React Native ツールキット。よく使うネイティブ機能をまとめています。",
-      },
-    },
-  },
-  {
-    id: "alock",
-    name: "Alock",
-    repository: "luoxuhai/Alock",
-    url: "https://github.com/luoxuhai/Alock",
-    language: "TypeScript",
-    accent: "#ec4899",
-    tags: ["Privacy", "iOS", "App hiding"],
-    content: {
-      "zh-cn": {
-        description: "免费隐藏指定 App 的隐私工具，让被隐藏 App 从主屏幕、App 资源库、搜索和系统设置中不可见。",
-      },
-      "zh-tw": {
-        description: "免費隱藏指定 App 的隱私工具，讓被隱藏 App 從主畫面、App 資料庫、搜尋和系統設定中不可見。",
-      },
-      en: {
-        description: "A privacy-focused tool for hiding selected apps from the Home Screen, App Library, search, and settings.",
-      },
-      ja: {
-        description: "選択した App をホーム画面、App ライブラリ、検索、設定から隠すプライバシーツールです。",
+        description:
+          "iOS 向けの軽量 React Native ツールキット。よく使うネイティブ機能をまとめています。",
       },
     },
   },
@@ -638,10 +631,22 @@ export const contributionProjects: OpenSourceProject[] = [
     accent: "#61dafb",
     tags: ["Mobile", "React", "Framework"],
     content: {
-      "zh-cn": { description: "使用 React 构建原生应用的框架，参与其移动端基础设施与开发体验建设。" },
-      "zh-tw": { description: "使用 React 建構原生應用的框架，參與其行動端基礎設施與開發體驗建設。" },
-      en: { description: "A framework for building native apps with React; contributions touch mobile infrastructure and developer experience." },
-      ja: { description: "React でネイティブアプリを構築するフレームワーク。モバイル基盤と開発体験に貢献しています。" },
+      "zh-cn": {
+        description:
+          "使用 React 构建原生应用的框架，参与其移动端基础设施与开发体验建设。",
+      },
+      "zh-tw": {
+        description:
+          "使用 React 建構原生應用的框架，參與其行動端基礎設施與開發體驗建設。",
+      },
+      en: {
+        description:
+          "A framework for building native apps with React; contributions touch mobile infrastructure and developer experience.",
+      },
+      ja: {
+        description:
+          "React でネイティブアプリを構築するフレームワーク。モバイル基盤と開発体験に貢献しています。",
+      },
     },
   },
   {
@@ -653,10 +658,20 @@ export const contributionProjects: OpenSourceProject[] = [
     accent: "#000020",
     tags: ["React Native", "iOS", "Android"],
     content: {
-      "zh-cn": { description: "用于构建 Android、iOS 和 Web 通用原生应用的开源框架。" },
-      "zh-tw": { description: "用於建構 Android、iOS 和 Web 通用原生應用的開源框架。" },
-      en: { description: "An open-source framework for building universal native apps across Android, iOS, and the web." },
-      ja: { description: "Android、iOS、Web に対応するユニバーサルなネイティブアプリを作るためのオープンソースフレームワークです。" },
+      "zh-cn": {
+        description: "用于构建 Android、iOS 和 Web 通用原生应用的开源框架。",
+      },
+      "zh-tw": {
+        description: "用於建構 Android、iOS 和 Web 通用原生應用的開源框架。",
+      },
+      en: {
+        description:
+          "An open-source framework for building universal native apps across Android, iOS, and the web.",
+      },
+      ja: {
+        description:
+          "Android、iOS、Web に対応するユニバーサルなネイティブアプリを作るためのオープンソースフレームワークです。",
+      },
     },
   },
   {
@@ -668,10 +683,22 @@ export const contributionProjects: OpenSourceProject[] = [
     accent: "#111827",
     tags: ["3D", "WebGL", "Graphics"],
     content: {
-      "zh-cn": { description: "JavaScript 3D 图形库，为 Web 端图形和可视化生态贡献代码。" },
-      "zh-tw": { description: "JavaScript 3D 圖形庫，為 Web 端圖形和視覺化生態貢獻程式碼。" },
-      en: { description: "A JavaScript 3D library powering graphics and visualization work on the web." },
-      ja: { description: "Web 上のグラフィックスと可視化を支える JavaScript 3D ライブラリです。" },
+      "zh-cn": {
+        description:
+          "JavaScript 3D 图形库，为 Web 端图形和可视化生态贡献代码。",
+      },
+      "zh-tw": {
+        description:
+          "JavaScript 3D 圖形庫，為 Web 端圖形和視覺化生態貢獻程式碼。",
+      },
+      en: {
+        description:
+          "A JavaScript 3D library powering graphics and visualization work on the web.",
+      },
+      ja: {
+        description:
+          "Web 上のグラフィックスと可視化を支える JavaScript 3D ライブラリです。",
+      },
     },
   },
   {
@@ -683,10 +710,22 @@ export const contributionProjects: OpenSourceProject[] = [
     accent: "#22c55e",
     tags: ["Point Cloud", "C++", "3D"],
     content: {
-      "zh-cn": { description: "点云处理领域的重要 C++ 库，支撑 3D 感知、测量和可视化能力。" },
-      "zh-tw": { description: "點雲處理領域的重要 C++ 函式庫，支撐 3D 感知、測量和視覺化能力。" },
-      en: { description: "A major C++ library for point-cloud processing, 3D perception, measurement, and visualization." },
-      ja: { description: "点群処理、3D 認識、測定、可視化を支える主要な C++ ライブラリです。" },
+      "zh-cn": {
+        description:
+          "点云处理领域的重要 C++ 库，支撑 3D 感知、测量和可视化能力。",
+      },
+      "zh-tw": {
+        description:
+          "點雲處理領域的重要 C++ 函式庫，支撐 3D 感知、測量和視覺化能力。",
+      },
+      en: {
+        description:
+          "A major C++ library for point-cloud processing, 3D perception, measurement, and visualization.",
+      },
+      ja: {
+        description:
+          "点群処理、3D 認識、測定、可視化を支える主要な C++ ライブラリです。",
+      },
     },
   },
 ];

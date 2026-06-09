@@ -74,26 +74,32 @@ const buildHeroIntro = () => `${independentExperienceYears}${t.heroIntroExperien
   <body>
     <main class="site-shell">
       <div class="top-controls">
-        <div class="language-switcher">
-          <label class="visually-hidden" for="language-select">{t.languageNavLabel}</label>
-          <select
-            id="language-select"
-            class="language-switcher__select"
-            aria-label={t.languageNavLabel}
-            onchange="window.location.href = this.value"
-          >
-            {locales.map((availableLocale) => (
-              <option
-                value={getOfficialLocalePath(availableLocale)}
-                selected={availableLocale === locale}
-                lang={localeMeta[availableLocale].htmlLang}
-              >
-                {localeMeta[availableLocale].nativeName}
-              </option>
-            ))}
-          </select>
-        </div>
-        <button class="theme-toggle" type="button" data-theme-toggle aria-label={t.themeToggleLabel} aria-pressed="false">
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#apps" class="nav-link">{t.appsTitle}</a>
+          <a href="#open-source" class="nav-link">{t.openSourceTitle}</a>
+          <a href="#contributions" class="nav-link">{t.contributionsTitle}</a>
+        </nav>
+        <div class="controls-right">
+          <div class="language-switcher">
+            <label class="visually-hidden" for="language-select">{t.languageNavLabel}</label>
+            <select
+              id="language-select"
+              class="language-switcher__select"
+              aria-label={t.languageNavLabel}
+              onchange="window.location.href = this.value"
+            >
+              {locales.map((availableLocale) => (
+                <option
+                  value={getOfficialLocalePath(availableLocale)}
+                  selected={availableLocale === locale}
+                  lang={localeMeta[availableLocale].htmlLang}
+                >
+                  {localeMeta[availableLocale].nativeName}
+                </option>
+              ))}
+            </select>
+          </div>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label={t.themeToggleLabel} aria-pressed="false">
           <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path fill="currentColor" d="M21 14.6A8.83 8.83 0 0 1 9.4 3a.75.75 0 0 0-.78-1.04A10.33 10.33 0 1 0 22.04 15.38a.75.75 0 0 0-1.04-.78ZM11.67 20.5a8.83 8.83 0 0 1-5.9-15.4 10.33 10.33 0 0 0 13.12 13.12 8.8 8.8 0 0 1-7.22 2.28Z" />
           </svg>
@@ -101,6 +107,7 @@ const buildHeroIntro = () => `${independentExperienceYears}${t.heroIntroExperien
             <path fill="currentColor" d="M12 6.25A5.75 5.75 0 1 0 12 17.75 5.75 5.75 0 0 0 12 6.25Zm0 10A4.25 4.25 0 1 1 12 7.75a4.25 4.25 0 0 1 0 8.5ZM12 1.75a.75.75 0 0 1 .75.75v1.25a.75.75 0 0 1-1.5 0V2.5a.75.75 0 0 1 .75-.75Zm0 17.75a.75.75 0 0 1 .75.75v1.25a.75.75 0 0 1-1.5 0v-1.25a.75.75 0 0 1 .75-.75ZM22.25 12a.75.75 0 0 1-.75.75h-1.25a.75.75 0 0 1 0-1.5h1.25a.75.75 0 0 1 .75.75ZM4.5 12a.75.75 0 0 1-.75.75H2.5a.75.75 0 0 1 0-1.5h1.25A.75.75 0 0 1 4.5 12Zm14.72-7.22a.75.75 0 0 1 0 1.06l-.88.88a.75.75 0 1 1-1.06-1.06l.88-.88a.75.75 0 0 1 1.06 0ZM6.72 17.28a.75.75 0 0 1 0 1.06l-.88.88a.75.75 0 0 1-1.06-1.06l.88-.88a.75.75 0 0 1 1.06 0Zm12.5 1.94a.75.75 0 0 1-1.06 0l-.88-.88a.75.75 0 0 1 1.06-1.06l.88.88a.75.75 0 0 1 0 1.06ZM6.72 6.72a.75.75 0 0 1-1.06 0l-.88-.88a.75.75 0 0 1 1.06-1.06l.88.88a.75.75 0 0 1 0 1.06Z" />
           </svg>
         </button>
+        </div>
       </div>
 
       <section class="hero" aria-labelledby="hero-title">
@@ -202,11 +209,9 @@ const buildHeroIntro = () => `${independentExperienceYears}${t.heroIntroExperien
       </section>
 
       <section id="open-source" class="projects-section" aria-labelledby="open-source-title">
-        <div class="section-heading section-heading--split">
-          <div>
-            <p class="eyebrow">{t.openSourceEyebrow}</p>
-            <h2 id="open-source-title">{t.openSourceTitle}</h2>
-          </div>
+        <div class="section-heading">
+          <p class="eyebrow">{t.openSourceEyebrow}</p>
+          <h2 id="open-source-title">{t.openSourceTitle}</h2>
           <p>{t.openSourceIntro}</p>
         </div>
 
@@ -232,11 +237,9 @@ const buildHeroIntro = () => `${independentExperienceYears}${t.heroIntroExperien
       </section>
 
       <section id="contributions" class="projects-section projects-section--compact" aria-labelledby="contributions-title">
-        <div class="section-heading section-heading--split">
-          <div>
-            <p class="eyebrow">{t.contributionsEyebrow}</p>
-            <h2 id="contributions-title">{t.contributionsTitle}</h2>
-          </div>
+        <div class="section-heading">
+          <p class="eyebrow">{t.contributionsEyebrow}</p>
+          <h2 id="contributions-title">{t.contributionsTitle}</h2>
           <p>{t.contributionsIntro}</p>
         </div>
 
