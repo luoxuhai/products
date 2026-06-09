@@ -35,11 +35,11 @@ const buildHeroIntro = () => `${independentExperienceYears}${t.heroIntroExperien
     <meta charset="UTF-8" />
     <meta name="description" content={t.metaDescription} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f7f3ea" />
+    <meta name="theme-color" content="#f5f5f7" />
     <script is:inline>
       (() => {
-        const lightThemeColor = "#f7f3ea";
-        const darkThemeColor = "#100f0d";
+        const lightThemeColor = "#f5f5f7";
+        const darkThemeColor = "#000000";
         const getStoredTheme = () => {
           try {
             const storedTheme = localStorage.getItem("theme");
@@ -212,8 +212,8 @@ const buildHeroIntro = () => `${independentExperienceYears}${t.heroIntroExperien
     </main>
     <script is:inline>
       (() => {
-        const lightThemeColor = "#f7f3ea";
-        const darkThemeColor = "#100f0d";
+        const lightThemeColor = "#f5f5f7";
+        const darkThemeColor = "#000000";
         const root = document.documentElement;
         const toggle = document.querySelector("[data-theme-toggle]");
         if (!toggle) {
