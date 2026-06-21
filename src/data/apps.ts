@@ -244,13 +244,60 @@ export const ui = {
 
 export const apps: App[] = [
   {
+    id: "shape-of-time",
+    platforms: ["iPhone"],
+    accent: "#62bfae",
+    iconUrl:
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/07/a0/a0/07a0a096-c96c-c2ed-b288-57925ab55a6d/AppIcon-0-0-1x_U007ephone-0-1-sRGB-85-220.png/512x512bb.jpg",
+    appStoreId: "6759101066",
+    featured: true,
+    content: {
+      "zh-cn": {
+        name: "时形",
+        subtitle: "看见时间的形状",
+        description:
+          "用动态三角形呈现时、分、秒，让时间的流动变得直观而富有艺术感，带来安静、独特的时钟体验。",
+        category: "生活",
+        tags: ["几何时钟", "时间可视化", "极简设计", "生成艺术"],
+      },
+      "zh-tw": {
+        name: "時形",
+        subtitle: "看見時間的形狀",
+        description:
+          "以動態三角形呈現時、分、秒，讓時間的流動變得直觀且富有藝術感，帶來安靜、獨特的時鐘體驗。",
+        category: "生活風格",
+        tags: ["幾何時鐘", "時間視覺化", "極簡設計", "生成藝術"],
+      },
+      en: {
+        name: "Shape of Time",
+        subtitle: "Watch time take shape",
+        description:
+          "Visualize hours, minutes, and seconds as a dynamic triangle, turning the flow of time into a calm, artistic, and distinctive clock experience.",
+        category: "Lifestyle",
+        tags: [
+          "Geometric clock",
+          "Time visualization",
+          "Minimalist design",
+          "Generative art",
+        ],
+      },
+      ja: {
+        name: "時の形",
+        subtitle: "時が形になる",
+        description:
+          "時・分・秒を動く三角形で表現し、時間の流れを直感的で芸術的に可視化する、静かでユニークな時計体験です。",
+        category: "ライフスタイル",
+        tags: ["幾何学時計", "時間の可視化", "ミニマルデザイン", "生成アート"],
+      },
+    },
+  },
+  {
     id: "off-phone",
     platforms: ["iPhone", "Apple Watch"],
     accent: "#5b8cff",
     iconUrl:
       "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7b/92/d2/7b92d242-f488-045f-bcc3-317ee3ff54a7/AppIcon-0-0-1x_U007ephone-0-1-sRGB-85-220.png/512x512bb.jpg",
     appStoreId: "6744548607",
-    featured: true,
     content: {
       "zh-cn": {
         name: "别碰手机",
@@ -269,7 +316,7 @@ export const apps: App[] = [
         tags: ["數位排毒", "專注", "番茄鐘", "距離提醒"],
       },
       en: {
-        name: "Off Phone",
+        name: "PhoneAway",
         subtitle: "Keep distance from your phone and stay present",
         description:
           "Get an automatic Apple Watch reminder when you move close to your iPhone, reducing mindless scrolling and rebuilding healthier focus habits.",
@@ -277,7 +324,7 @@ export const apps: App[] = [
         tags: ["Digital detox", "Focus", "Pomodoro", "Distance alerts"],
       },
       ja: {
-        name: "スマホに触らない",
+        name: "スマホ断ち",
         subtitle: "スマホから離れて、今に集中",
         description:
           "Apple Watch を着けてスマホに近づくと自動で通知し、無意識のスクロールを減らして健全な集中習慣を取り戻します。",
@@ -311,7 +358,7 @@ export const apps: App[] = [
         tags: ["疲勞監控", "低頭提醒", "備考", "熬夜"],
       },
       en: {
-        name: "Stay Awake Reminder",
+        name: "Fatigue Alert",
         subtitle: "Monitor fatigue and stay alert",
         description:
           "A fatigue reminder for study, work, exam prep, and late-night sessions that warns you when you lower your head or start dozing off.",
@@ -324,7 +371,7 @@ export const apps: App[] = [
         ],
       },
       ja: {
-        name: "居眠りリマインダー",
+        name: "居眠り防止アラート",
         subtitle: "疲労状態を見守り、いつでも覚醒を保つ",
         description:
           "学習、仕事、試験対策、夜間のシーン向けに、うつむきや居眠りの状態をすばやく知らせる疲労リマインダーです。",
@@ -366,7 +413,7 @@ export const apps: App[] = [
         tags: ["LiDAR", "Measuring", "Level", "Renovation"],
       },
       ja: {
-        name: "レーザー測距計",
+        name: "レーザー距離計",
         subtitle: "深度センサーで高精度に測距",
         description:
           "LiDAR と TrueDepth カメラで距離や寸法を測定し、工事測定、リフォーム測定、カメラのフォーカス補助に役立ちます。",
@@ -400,7 +447,7 @@ export const apps: App[] = [
         tags: ["無障礙", "避障", "距離偵測", "出行輔助"],
       },
       en: {
-        name: "Smart Cane",
+        name: "White Cane",
         subtitle: "Detect obstacle distance for accessible travel",
         description:
           "Detect and identify obstacle distance in real time, giving visually impaired users a phone-based companion for safer navigation.",
@@ -413,7 +460,7 @@ export const apps: App[] = [
         ],
       },
       ja: {
-        name: "スマート白杖",
+        name: "白杖",
         subtitle: "障害物までの距離を検出し、視覚障がい者の移動を支援",
         description:
           "障害物までの距離をリアルタイムに検出・識別し、スマホを持ち歩ける避障支援ツールとして活用できます。",
@@ -497,7 +544,7 @@ export const apps: App[] = [
         tags: ["Night vision", "LiDAR", "Infrared camera", "Scanning"],
       },
       ja: {
-        name: "ナイトビジョン",
+        name: "夜視カメラ",
         subtitle: "LiDAR + TrueDepth カメラでスキャン成像",
         description:
           "低照度や暗闇の環境でスキャン成像、写真撮影、動画録画を行い、深度センサーがもたらすナイトビジョン体験を探れます。",

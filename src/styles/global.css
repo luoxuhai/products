@@ -480,28 +480,33 @@ h1 {
 }
 
 .constellation-orbit--2 {
-  --orbit-start: 60deg;
-  --orbit-start-inverse: -60deg;
+  --orbit-start: 51.43deg;
+  --orbit-start-inverse: -51.43deg;
 }
 
 .constellation-orbit--3 {
-  --orbit-start: 120deg;
-  --orbit-start-inverse: -120deg;
+  --orbit-start: 102.86deg;
+  --orbit-start-inverse: -102.86deg;
 }
 
 .constellation-orbit--4 {
-  --orbit-start: 180deg;
-  --orbit-start-inverse: -180deg;
+  --orbit-start: 154.29deg;
+  --orbit-start-inverse: -154.29deg;
 }
 
 .constellation-orbit--5 {
-  --orbit-start: 240deg;
-  --orbit-start-inverse: -240deg;
+  --orbit-start: 205.71deg;
+  --orbit-start-inverse: -205.71deg;
 }
 
 .constellation-orbit--6 {
-  --orbit-start: 300deg;
-  --orbit-start-inverse: -300deg;
+  --orbit-start: 257.14deg;
+  --orbit-start-inverse: -257.14deg;
+}
+
+.constellation-orbit--7 {
+  --orbit-start: 308.57deg;
+  --orbit-start-inverse: -308.57deg;
 }
 
 @keyframes constellation-orbit {
